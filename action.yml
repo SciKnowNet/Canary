@@ -1,0 +1,29 @@
+name: 'Canary Secret Scanner'
+description: 'Scan your repository for hardcoded secrets, API keys, and tokens'
+author: 'SciKnowNet'
+
+inputs:
+  path:
+    description: 'Directory to scan'
+    default: '.'
+  severity:
+    description: 'Minimum severity: LOW | MEDIUM | HIGH | CRITICAL'
+    default: 'LOW'
+  format:
+    description: 'Output format: table | json | summary'
+    default: 'table'
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - '-path'
+    - ${{ inputs.path }}
+    - '-severity'
+    - ${{ inputs.severity }}
+    - '-format'
+    - ${{ inputs.format }}
+
+branding:
+  icon: 'shield'
+  color: 'yellow'
