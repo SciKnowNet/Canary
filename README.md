@@ -1,0 +1,2 @@
+# Canary
+Canary secret scanner
