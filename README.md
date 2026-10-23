@@ -160,7 +160,7 @@ This makes Canary easy to use as a CI gate: a non-zero exit code fails the build
 ## Using Canary as a library
 
 ```go
-import "github.com/Kremilly/canary/internal/secretscan"
+import "github.com/SciKnowNet/canary/internal/secretscan"
 
 sc := secretscan.New(secretscan.Config{
     SkipDirs:   []string{"testdata"},
